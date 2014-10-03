@@ -2,6 +2,12 @@ execute pathogen#infect()
 se hls
 se ic
 se wrap
+se ai
+se ts=4
+se sw=4
+se et
+
+syntax on
 
 vmap  <expr>  h        DVB_Drag('left')   
 vmap  <expr>  l        DVB_Drag('right') 
