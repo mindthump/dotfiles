@@ -2,6 +2,7 @@
 
 ```
 cd ~
+mkdir .vim_old
 mv .vim .vim_old
 mv .vimrc .vim_old
 mv .gvimrc .vim_old
