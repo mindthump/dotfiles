@@ -10,7 +10,7 @@ mv .tmux.conf .vim_old
 git clone https://github.com/mindthump/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
-ln -s ~/.vim/tmux.conf ~/.gvimrc
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
 pushd ~/.vim
 git submodule update --init
 git submodule foreach git pull origin master
