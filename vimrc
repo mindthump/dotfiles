@@ -72,7 +72,7 @@ set softtabstop=4
 set expandtab
 set wrap
 set textwidth=80
-set formatoptions=qrn1j
+set formatoptions=qrn1
 "set colorcolumn=+1
 
 " }}}
@@ -114,9 +114,9 @@ set wildignore+=lib
 set backup                        " enable backups
 set noswapfile                    " it's 2013, Vim.
 
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
+set undodir=~/.vim/tmp/undo/     " undo files
+set backupdir=~/.vim/tmp/backup/ " backups
+set directory=~/.vim/tmp/swap/   " swap files
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
