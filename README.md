@@ -12,7 +12,8 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 cd ~/.vim
-git submodule update --init
+git submodule init
+git submodule update
 git submodule foreach git pull origin master
 cd ~
 ```
