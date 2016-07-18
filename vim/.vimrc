@@ -1,8 +1,14 @@
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on
-set nocompatible
+set directory=.,$TEMP
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+call plug#begin('~/.vim/plugged')
+Plug 'easymotion/vim-easymotion'
+Plug 'powerline/powerline'
+Plug 'tommcdo/vim-exchange'
+call plug#end()
+
 set gdefault
 syntax on
 
@@ -20,19 +26,10 @@ vnoremap / /\v
 " Turn off search highlight
 nnoremap <leader><space> :noh<cr>
 
-" Block moving thingy
-vmap  <expr>  h        DVB_Drag('left')   
-vmap  <expr>  l        DVB_Drag('right') 
-vmap  <expr>  j        DVB_Drag('down') 
-vmap  <expr>  k        DVB_Drag('up')  
-
 " 'list' mode: start off, flip ",l", change visible markers 
 set nolist
 nmap <leader>l :set list!<CR>
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
-
-" Toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
+" set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 " {{{ Basic stuff
 
@@ -84,31 +81,6 @@ set completeopt=longest,menuone,preview
 " Save when losing focus
 au FocusLost * :silent! wall
 
-" Wildmenu completion {{{
-set wildmenu
-set wildmode=list:longest
-
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.spl                            " compiled spelling word lists
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX bullshit
-
-set wildignore+=*.luac                           " Lua byte code
-
-set wildignore+=migrations                       " Django migrations
-set wildignore+=*.pyc                            " Python byte code
-
-set wildignore+=*.orig                           " Merge resolution files
-
-" Clojure/Leiningen
-set wildignore+=classes
-set wildignore+=lib
-
-" }}}
-
 " Backups {{{
 
 set backup                        " enable backups
@@ -130,3 +102,9 @@ if !isdirectory(expand(&directory))
 endif
 
 " }}}
+
+
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
