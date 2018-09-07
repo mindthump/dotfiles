@@ -101,6 +101,8 @@ alias gffco="git flow feature checkout"
 alias gffr="git flow feature rebase -i"
 alias gffp="git flow feature publish"
 
+function pyfind { find . -type d \( -path ./gk_third_party -o -path ./.git -o -path ./.idea -o -path ./Discovery \) -prune -o -type f -name '*.py' -exec grep -Hi $1 {} \; }
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 hash -d ci=/Users/ec31845/repos/CssCITools

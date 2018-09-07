@@ -7,10 +7,10 @@
 	excludesfile = /Users/ec31845/.gitignore_global
 	autocrlf = input
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
-	path = -ro
+	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = /Users/ec31845/.stCommitMsg
