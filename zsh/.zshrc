@@ -115,3 +115,5 @@ bindkey -v
 # Python virtual env
 . ~/test_venv/bin/activate
 
+export RIPGREP_CONFIG_PATH=/Users/ec31845/.ripgreprc
+export BYOBU_PYTHON=/usr/local/bin/python3
