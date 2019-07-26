@@ -1,27 +1,14 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ec31845/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -54,21 +41,29 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git git-flow-avh common-aliases history-substring-search
-)
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
+source /usr/local/share/antigen/antigen.zsh
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle pip
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle docker-machine
+antigen bundle akarzim/zsh-docker-aliases
+antigen bundle common-aliases
+antigen bundle command-not-found
+antigen bundle history-substring-search
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -82,17 +77,16 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# OVERRIDES antigen bundles!
+alias ydl="youtube-dl --no-check-certificate"
+alias h="omz_history|tac|less"
+alias dksum="docker image ls -a; docker container ls -a; docker volume ls;docker network ls"
 alias gff="git flow feature"
 alias gffs="git flow feature start"
 alias gfff="git flow feature finish"
@@ -101,19 +95,29 @@ alias gffco="git flow feature checkout"
 alias gffr="git flow feature rebase -i"
 alias gffp="git flow feature publish"
 
-function pyfind { find . -type d \( -path ./gk_third_party -o -path ./.git -o -path ./.idea -o -path ./Discovery \) -prune -o -type f -name '*.py' -exec grep -Hi $1 {} \; }
+alias gg="gcloud"
+alias ggc="gcloud compute"
+alias ggcn="gcloud compute networks"
+alias ggC="gcloud container"
+
+unalias rm
+
+# Use th enew buildkit
+export DOCKER_BUILDKIT=1
+
+# Customize which directories to exclude
+function pyfind { find . -type d \( -path ./.git -o -path ./.idea  \) -prune -o -type f -name '*.py' -exec grep -Hi $1 {} \; }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-hash -d ci=/Users/ec31845/repos/CssCITools
-hash -d fw=/Users/ec31845/repos/fw
-hash -d mock=/Users/ec31845/repos/MockExample
+hash -d mock=/Users/ed/repos/MockExample
+hash -d paf=/Users/ed/repos/python_app_framework
 
 # vi mode in line editor
 bindkey -v
 
-# Python virtual env
-. ~/test_venv/bin/activate
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
-export RIPGREP_CONFIG_PATH=/Users/ec31845/.ripgreprc
-export BYOBU_PYTHON=/usr/local/bin/python3
+# Python venv
+. /Users/ed/app_fwk_venv/bin/activate
