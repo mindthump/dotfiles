@@ -55,6 +55,7 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle docker-machine
 antigen bundle akarzim/zsh-docker-aliases
+antigen bundle kubectl
 antigen bundle common-aliases
 antigen bundle command-not-found
 antigen bundle history-substring-search
