@@ -46,7 +46,7 @@ ZSH_THEME="ejc"
 export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 source $ZSH/oh-my-zsh.sh
 
-source /usr/local/share/antigen/antigen.zsh
+source ~/.dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle git
@@ -120,5 +120,5 @@ bindkey -v
 # source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 # source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
-# Python venv
+# LOCAL CUSTOMIZATION HERE: Python venv, repo, etc.
 . /Users/ed/app_fwk_venv/bin/activate
