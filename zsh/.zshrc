@@ -122,3 +122,5 @@ bindkey -v
 
 # Python venv
 . /Users/ed/app_fwk_venv/bin/activate
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

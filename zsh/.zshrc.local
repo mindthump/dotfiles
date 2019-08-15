@@ -1,0 +1,3 @@
+# FIX AS NEEDED
+[ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
+[ -f ~/repos/arcanist/bin ] && export PATH=$PATH:~/repos/arcanist/bin
