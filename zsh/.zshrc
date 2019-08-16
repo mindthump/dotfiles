@@ -121,6 +121,4 @@ bindkey -v
 # source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # LOCAL CUSTOMIZATION HERE: Python venv, repo, etc.
-. /Users/ed/app_fwk_venv/bin/activate
-
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

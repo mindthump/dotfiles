@@ -5,26 +5,3 @@
 runtests() {
     (cd /mnt/pinboard && bin/run_tests.py --rednose --hide-skips "$@")
 }
-
-_runtests() {
-    local cur tests
-    declare -a dirs
-    _get_comp_words_by_ref -n : cur
-
-    if [[ "$cur" == *.py* ]]; then
-        COMPREPLY=($(cd /mnt/pinboard && nosecomplete "${cur}" 2>/dev/null))
-        __ltrim_colon_completions "$cur"
-        return 0
-    fi
-
-    if [[ -n "$cur" ]]; then
-        [[ -d "$cur" ]] && dirs[0]="$cur" || dirs[0]=$(dirname "$cur")
-    else
-        dirs=(libs ml tests tools webapp services tests)
-    fi
-
-    tests=$(cd /mnt/pinboard && find "${dirs[@]}" -name 'test_*.py')
-    mapfile -t COMPREPLY < <(compgen -o dirnames -W "${tests}" -- "$cur")
-}
-
-complete -o nospace -F _runtests runtests
