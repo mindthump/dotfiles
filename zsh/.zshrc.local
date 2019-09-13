@@ -2,6 +2,9 @@
 [ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
 [ -f ~/repos/arcanist/bin ] && export PATH=$PATH:~/repos/arcanist/bin
 
-runtests() {
+export PYTHON_3_NGAPI=true
+
+runtest(s) {
     (cd /mnt/pinboard && bin/run_tests.py --rednose --hide-skips "$@")
 }
+
