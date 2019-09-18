@@ -4,7 +4,7 @@
 
 export PYTHON_3_NGAPI=true
 
-runtest(s) {
+runtests() {
     (cd /mnt/pinboard && bin/run_tests.py --rednose --hide-skips "$@")
 }
 
