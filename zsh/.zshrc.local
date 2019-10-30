@@ -8,3 +8,5 @@ runtests() {
     (cd /mnt/pinboard && bin/run_tests.py --rednose --hide-skips "$@")
 }
 
+hash -d pin=/home/ecardinal/code/pinboard
+cd ~pin
