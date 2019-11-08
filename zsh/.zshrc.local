@@ -1,12 +1,5 @@
 # FIX AS NEEDED
-[ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
-[ -f ~/repos/arcanist/bin ] && export PATH=$PATH:~/repos/arcanist/bin
+# [ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
 
-export PYTHON_3_NGAPI=true
-
-runtests() {
-    (cd /mnt/pinboard && bin/run_tests.py --rednose --hide-skips "$@")
-}
-
-hash -d pin=/home/ecardinal/code/pinboard
-cd ~pin
+# hash -d pin=/home/ecardinal/code/pinboard
+# cd ~pin
