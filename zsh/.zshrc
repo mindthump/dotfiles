@@ -101,8 +101,6 @@ alias ggc="gcloud compute"
 alias ggcn="gcloud compute networks"
 alias ggC="gcloud container"
 
-unalias rm
-
 # Use th enew buildkit
 export DOCKER_BUILDKIT=1
 
