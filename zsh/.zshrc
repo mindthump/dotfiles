@@ -36,7 +36,12 @@ ZSH_THEME="ejc"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt SHARE_HISTORY
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -55,10 +60,11 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle docker-machine
 antigen bundle akarzim/zsh-docker-aliases
-antigen bundle kubectl
+# antigen bundle kubectl
 antigen bundle common-aliases
 antigen bundle command-not-found
 antigen bundle history-substring-search
+antigen bundle history
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -86,7 +92,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # For a full list of active aliases, run `alias`.
 # OVERRIDES antigen bundles!
 alias ydl="youtube-dl --no-check-certificate"
-alias h="omz_history|tac|less"
+alias h="history|less +G"
 alias dksum="docker image ls -a; docker container ls -a; docker volume ls;docker network ls"
 alias gff="git flow feature"
 alias gffs="git flow feature start"

@@ -1,5 +1,3 @@
 # FIX AS NEEDED
-# [ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
 
-# hash -d pin=/home/ecardinal/code/pinboard
-# cd ~pin
+LESS=-S

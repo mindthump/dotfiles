@@ -25,10 +25,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
-Plug 'zerowidth/vim-copy-as-rtf'
 Plug 'powerline/powerline'
 Plug 'tommcdo/vim-exchange'
 Plug 'godlygeek/tabular'
-Plug 'rizzatti/dash.vim'
 call plug#end()
 
