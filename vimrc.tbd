@@ -4,8 +4,6 @@ set nocompatible
 set gdefault
 syntax on
 
-execute pathogen#infect()
-
 " {{{ Leader
 
 let mapleader = ","
@@ -19,12 +17,6 @@ vnoremap / /\v
 
 " Turn off search highlight
 nnoremap <leader><space> :noh<cr>
-
-" Block moving thingy
-vmap  <expr>  h        DVB_Drag('left')   
-vmap  <expr>  l        DVB_Drag('right') 
-vmap  <expr>  j        DVB_Drag('down') 
-vmap  <expr>  k        DVB_Drag('up')  
 
 " 'list' mode: start off, flip ",l", change visible markers 
 set nolist

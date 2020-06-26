@@ -1,5 +1,21 @@
 # FIX AS NEEDED
-# [ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
 
-# hash -d pin=/home/ecardinal/code/pinboard
-# cd ~pin
+hash -d mock=/Users/ed/repos/MockExample
+hash -d paf=/Users/ed/repos/python_app_framework
+
+# Spectranetix PC home (not WSL or network)
+hash -d ejc=/mnt/c/Users/edward.cardinal
+
+# For WSL2 Ubuntu
+alias clip=/mnt/c/Windows/System32/clip.exe
+
+# Google Cloud
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# alias gg="gcloud"
+# alias ggc="gcloud compute"
+# alias ggcn="gcloud compute networks"
+# alias ggC="gcloud container"
+
+# Someday, separate out Mac-specific
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
