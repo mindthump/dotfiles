@@ -2,21 +2,5 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Ed Cardinal
-	email = ed.cardinal@wdc.com
-[core]
-	excludesfile = /Users/ec31845/.gitignore_global
-	autocrlf = input
-[difftool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/ec31845/.stCommitMsg
-[gc]
-	autoDetach = false
-[mergetool "araxis"]
-	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
-[merge]
-	tool = araxis
+	email = edcgit@mindthump.com
+
