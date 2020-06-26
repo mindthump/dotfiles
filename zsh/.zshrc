@@ -7,7 +7,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # ANTIGEN / OH-MY-ZSH
 ZSH_THEME="ejc"
 ZSH=$HOME/.oh-my-zsh
-source ~/.zsh/antigen.zsh
+source ~/.antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
