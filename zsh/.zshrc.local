@@ -1,3 +1,15 @@
 # FIX AS NEEDED
 
-LESS=-S
+LESS=-S -r
+
+hash -d mock=/Users/ed/repos/MockExample
+hash -d paf=/Users/ed/repos/python_app_framework
+
+# Spectranetix PC home (not WSL or network)
+hash -d ejc=/mnt/c/Users/edward.cardinal
+
+# For WSL2 Ubuntu
+alias clip=/mnt/c/Windows/System32/clip.exe
+
+# Someday, separate out Mac-specific
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
