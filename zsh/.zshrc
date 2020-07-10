@@ -57,6 +57,7 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle docker
+antigen bundle vagrant
 antigen bundle docker-compose
 antigen bundle docker-machine
 antigen bundle akarzim/zsh-docker-aliases
@@ -126,3 +127,4 @@ bindkey -v
 
 # LOCAL CUSTOMIZATION HERE: Python venv, repo, etc.
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+export LESS="-S -r"

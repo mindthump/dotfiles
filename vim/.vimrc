@@ -28,5 +28,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'powerline/powerline'
 Plug 'tommcdo/vim-exchange'
 Plug 'godlygeek/tabular'
+Plug 'stephpy/vim-yaml'
+Plug 'whiteinge/diffconflicts'
+Plug 'preservim/nerdtree'
 call plug#end()
 
