@@ -1,6 +1,6 @@
 # FIX AS NEEDED
 
-LESS=-S -r
+LESS="-S -r"
 
 hash -d mock=/Users/ed/repos/MockExample
 hash -d paf=/Users/ed/repos/python_app_framework
