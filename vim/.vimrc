@@ -33,7 +33,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'powerline/powerline'
 Plug 'tommcdo/vim-exchange'
 Plug 'godlygeek/tabular'
-Plug 'preservim/nerdtree'
 call plug#end()
 
 let &t_SI.="\e[5 q"
