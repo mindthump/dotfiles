@@ -34,7 +34,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'whiteinge/diffconflicts'
-Plug 'zerowidth/vim-copy-as-rtf'
+" Mac only
+" Plug 'zerowidth/vim-copy-as-rtf'
 call plug#end()
 
 let &t_SI.="\e[5 q"
