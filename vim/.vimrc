@@ -23,12 +23,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'zerowidth/vim-copy-as-rtf'
-Plug 'powerline/powerline'
+" Plug 'powerline/powerline'
+Plug 'vim-airline/vim-airline'
 Plug 'tommcdo/vim-exchange'
 Plug 'godlygeek/tabular'
 Plug 'rizzatti/dash.vim'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
+let g:NERDTreeShowHidden=1

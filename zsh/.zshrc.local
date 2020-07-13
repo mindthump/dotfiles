@@ -1,7 +1,7 @@
 # FIX AS NEEDED
-[ -f /mnt/pinboard/bin ] && export PATH=$PATH:/mnt/pinboard/bin
-[ -f ~/repos/arcanist/bin ] && export PATH=$PATH:~/repos/arcanist/bin
 
-runtests() {
-    (cd /mnt/pinboard && bin/run_tests.py --rednose --hide-skips "$@")
-}
+# I like my toolkit
+
+alias dkRa='docker run -e COLUMNS=`tput cols` -e LINES=`tput lines` -it --rm --entrypoint /usr/bin/zsh mindthump/toolkit'
+
+source ~/.venv_py3/bin/activate > /dev/null 2>&1

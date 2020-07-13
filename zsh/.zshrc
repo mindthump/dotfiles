@@ -43,7 +43,7 @@ ZSH_THEME="ejc"
 
 # User configuration
 
-export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 source $ZSH/oh-my-zsh.sh
 
 source ~/.dotfiles/antigen.zsh
@@ -59,6 +59,7 @@ antigen bundle kubectl
 antigen bundle common-aliases
 antigen bundle command-not-found
 antigen bundle history-substring-search
+antigen bundle urltools
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
