@@ -9,6 +9,8 @@ setopt SHARE_HISTORY
 # User configuration
 
 export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# Use vim for less, etc.
+export EDITOR=/usr/bin/vim
 
 # Execution time stamp shown in the history command output.
 HIST_STAMPS="mm/dd/yyyy"

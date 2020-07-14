@@ -3,3 +3,17 @@
 [user]
 	name = Ed Cardinal
 	email = edcgit@mindthump.com
+[diff]
+	tool = meld
+[difftool "p4merge"]
+	path = /mnt/c/Program Files/Perforce/p4merge.exe
+[difftool "meld"]
+	path=/usr/local/bin/meld
+[merge]
+	tool = meld
+[mergetool "p4merge"]
+	path = /mnt/c/Program Files/Perforce/p4merge.exe
+[mergetool "meld"]
+	path = /usr/local/bin/meld
+[mergetool]
+	keepBackup = false
