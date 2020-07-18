@@ -3,19 +3,31 @@
 [user]
 	name = Ed Cardinal
 	email = edcgit@mindthump.com
-[diff]
-	tool = meld
+[pull]
+	rebase = false
 [difftool "p4merge"]
 	path = /mnt/c/Program Files/Perforce/p4merge.exe
 [difftool "meld"]
 	path=/usr/local/bin/meld
-[merge]
-	tool = meld
+[difftool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool "p4merge"]
 	path = /mnt/c/Program Files/Perforce/p4merge.exe
 [mergetool "meld"]
 	path = /usr/local/bin/meld
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool]
 	keepBackup = false
-[pull]
-	rebase = false
+[diff]
+	tool = kdiff3
+[merge]
+	tool = kdiff3
+[difftool]
+	prompt = false
+	keepBackup = false
+	trustExitCode = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+	keepTemporaries = false
