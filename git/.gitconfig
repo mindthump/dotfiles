@@ -13,3 +13,8 @@
 	path = /mnt/c/Program Files/Perforce/p4merge.exe
 [mergetool]
 	keepBackup = false
+[core]
+	autocrlf = input
+	eol = lf
+[credential]
+	helper = store
