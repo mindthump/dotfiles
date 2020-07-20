@@ -17,3 +17,6 @@ alias clip=/mnt/c/Windows/System32/clip.exe
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.venv_py3/bin/activate > /dev/null 2>&1
+
+# snap is a fucking pain in the ass.
+export PATH=${PATH}:/usr/bin/snap

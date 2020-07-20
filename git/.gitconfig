@@ -3,6 +3,11 @@
 [user]
 	name = Ed Cardinal
 	email = edcgit@mindthump.com
+[core]
+	autocrlf = input
+	eol = lf
+[credential]
+	helper = store
 [pull]
 	rebase = false
 

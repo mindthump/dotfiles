@@ -47,6 +47,7 @@ alias gffr="git flow feature rebase -i"
 alias gffp="git flow feature publish"
 
 export DOCKER_BUILDKIT=1
+alias dkcl='docker container list --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}"'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
