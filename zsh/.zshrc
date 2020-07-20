@@ -1,9 +1,11 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+#!/bin/bash
 
-HISTFILE=~/.zsh_history
+# Path to your oh-my-zsh installation.
+export ZSH="${HOME}/.oh-my-zsh"
+
+HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=1000
-SAVEHIST=1000
+export SAVEHIST=1000
 setopt SHARE_HISTORY
 
 # User configuration
@@ -12,13 +14,16 @@ export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbi
 # Use vim for less, etc.
 export EDITOR=/usr/bin/vim
 
+# Chop lines and raw (for color)
+export LESS="-S -r"
+
 # Execution time stamp shown in the history command output.
-HIST_STAMPS="mm/dd/yyyy"
+export HIST_STAMPS="mm/dd/yyyy"
 
 # ANTIGEN / OH-MY-ZSH
-ZSH_THEME="ejc"
-ZSH=$HOME/.oh-my-zsh
-source ~/.antigen.zsh
+export ZSH_THEME="ejc"
+ZSH="${HOME}/.oh-my-zsh"
+source "${HOME}/.antigen.zsh"
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
@@ -31,13 +36,13 @@ antigen bundle command-not-found
 antigen bundle history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
-source $ZSH/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 alias ydl="youtube-dl --no-check-certificate"
-alias dksum="docker image ls -a; docker container ls -a; docker volume ls;docker network ls"
+alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network ls"
 alias gff="git flow feature"
 alias gffs="git flow feature start"
 alias gfff="git flow feature finish"
@@ -47,15 +52,17 @@ alias gffr="git flow feature rebase -i"
 alias gffp="git flow feature publish"
 
 export DOCKER_BUILDKIT=1
-alias dkcl='docker container list --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}"'
+alias dkcl="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
 # vi mode in line editor
 bindkey -v
 
-# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-
 # LOCAL CUSTOMIZATION HERE: Python venv, repo, etc.
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
+  source "${HOME}/.zshrc.$(uname -n)"
+fi
+
