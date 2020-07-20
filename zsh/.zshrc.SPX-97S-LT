@@ -3,9 +3,8 @@
 # For WSL2 Ubuntu @SPX
 alias clip=/mnt/c/Windows/System32/clip.exe
 hash -d ejc=/mnt/c/Users/edward.cardinal
-export PATH=${PATH}:/usr/bin/snap
-
-source ~/.venv_py3/bin/activate > /dev/null 2>&1
 
 # snap is a fucking pain in the ass.
 export PATH=${PATH}:/usr/bin/snap
+
+source ~/.venv_py3/bin/activate > /dev/null 2>&1
