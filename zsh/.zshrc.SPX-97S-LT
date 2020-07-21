@@ -7,4 +7,4 @@ hash -d ejc=/mnt/c/Users/edward.cardinal
 # snap is a fucking pain in the ass.
 export PATH=${PATH}:/usr/bin/snap
 
-source ~/.venv_py3/bin/activate > /dev/null 2>&1
+source ~/.venv/bin/activate > /dev/null 2>&1

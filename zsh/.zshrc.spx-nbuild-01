@@ -3,4 +3,4 @@
 # For nbuild @SPX
 export PATH=${PATH}:/usr/bin/snap
 
-source ~/.venv_py3/bin/activate > /dev/null 2>&1
+source ~/.venv/bin/activate > /dev/null 2>&1
