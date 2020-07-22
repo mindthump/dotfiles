@@ -1,0 +1,8 @@
+# FIX AS NEEDED
+LESS="-S -r"
+
+# For Macbook Pro @home
+hash -d mock=/Users/ed/repos/MockExample
+hash -d paf=/Users/ed/repos/python_app_framework
+
+source ~/.venv/bin/activate > /dev/null 2>&1
