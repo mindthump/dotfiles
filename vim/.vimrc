@@ -42,3 +42,5 @@ let &t_EI.="\e[1 q"
 let g:netrw_dirhistmax = 0
 
 let g:NERDTreeShowHidden=1
+
+set modeline

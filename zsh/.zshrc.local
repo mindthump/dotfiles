@@ -1,5 +1,5 @@
 # FIX AS NEEDED
-LESS="-S -r"
+# LESS="-S -r"
 
 # Someday, separate out Mac-specific, worksite specific
 #

@@ -14,9 +14,6 @@ export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbi
 # Use vim for less, etc.
 export EDITOR=/usr/bin/vim
 
-# Chop lines and raw (for color)
-export LESS="-S -r"
-
 # Execution time stamp shown in the history command output.
 export HIST_STAMPS="mm/dd/yyyy"
 
@@ -29,12 +26,15 @@ antigen bundle git
 antigen bundle pip
 antigen bundle docker
 antigen bundle vagrant
+antigen bundle vagrant-prompt
 antigen bundle docker-compose
 antigen bundle akarzim/zsh-docker-aliases
 antigen bundle common-aliases
 antigen bundle command-not-found
 antigen bundle history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle scd
+antigen bundle sudo
 antigen apply
 source "${ZSH}/oh-my-zsh.sh"
 
@@ -52,7 +52,7 @@ alias gffr="git flow feature rebase -i"
 alias gffp="git flow feature publish"
 
 export DOCKER_BUILDKIT=1
-alias dkcl="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
+alias dkCl="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
 
 if [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]]; then
   source "${HOME}/.iterm2_shell_integration.zsh"
