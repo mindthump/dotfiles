@@ -31,12 +31,15 @@ antigen bundle git
 antigen bundle pip
 antigen bundle docker
 antigen bundle vagrant
-# antigen bundle docker-compose
+antigen bundle vagrant-prompt
+antigen bundle docker-compose
 antigen bundle akarzim/zsh-docker-aliases
 antigen bundle common-aliases
-# antigen bundle command-not-found
+antigen bundle command-not-found
 antigen bundle history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle scd
+antigen bundle sudo
 antigen apply
 source "${ZSH}/oh-my-zsh.sh"
 
