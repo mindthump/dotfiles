@@ -32,8 +32,11 @@
 	path = /usr/local/bin/meld
 [mergetool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[mergetool "vim"]
+	cmd = vim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+	prompt = false
 
 [diff]
 	tool = kdiff3
 [merge]
-	tool = kdiff3
+	tool = vim

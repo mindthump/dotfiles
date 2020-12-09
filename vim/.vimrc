@@ -17,7 +17,7 @@ nnoremap <leader><space> :noh<cr>
 " 'list' mode: start off, flip ",l", change visible markers 
 set nolist
 nmap <leader>l :set list!<CR>
-" set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
@@ -28,12 +28,17 @@ Plug 'powerline/powerline'
 Plug 'preservim/nerdtree'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+" Plug 'svermeulen/vim-easyclip'
 Plug 'vim-airline/vim-airline'
 Plug 'whiteinge/diffconflicts'
 Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
+
+set number
+set relativenumber
 
 let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
