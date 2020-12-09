@@ -43,6 +43,7 @@ export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 alias ydl="youtube-dl --no-check-certificate"
 alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network ls"
+alias dkCla="docker container ls -a"
 alias gff="git flow feature"
 alias gffs="git flow feature start"
 alias gfff="git flow feature finish"
