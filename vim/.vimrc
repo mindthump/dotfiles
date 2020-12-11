@@ -1,5 +1,7 @@
 set showcmd
 
+set encoding=utf-8
+
 " {{{ Leader
 
 let mapleader = ","
@@ -17,7 +19,8 @@ nnoremap <leader><space> :noh<cr>
 " 'list' mode: start off, flip ",l", change visible markers 
 set nolist
 nmap <leader>l :set list!<CR>
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set showbreak=↪\ 
+set listchars=tab:▸\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
