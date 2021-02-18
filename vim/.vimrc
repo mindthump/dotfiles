@@ -53,4 +53,6 @@ let g:netrw_dirhistmax = 0
 
 let g:NERDTreeShowHidden=1
 
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
 set modeline
