@@ -9,5 +9,7 @@ export PATH=${PATH}:/usr/bin/snap
 
 source ~/.venv/bin/activate > /dev/null 2>&1
 
+source ~/repos/git-subrepo/.rc
+
 # Start byobu
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true

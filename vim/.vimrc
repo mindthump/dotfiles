@@ -35,6 +35,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'whiteinge/diffconflicts'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'skanehira/docker-compose.vim'
 call plug#end()
 
 set number
