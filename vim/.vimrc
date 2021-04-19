@@ -1,5 +1,8 @@
 set showcmd
 
+" For CircuitPython
+set noswapfile
+
 " {{{ Leader
 
 let mapleader = ","
@@ -32,6 +35,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'whiteinge/diffconflicts'
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 let &t_SI.="\e[5 q"

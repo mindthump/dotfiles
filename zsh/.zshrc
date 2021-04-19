@@ -41,7 +41,7 @@ source "${ZSH}/oh-my-zsh.sh"
 # ssh
 export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
-alias ydl="youtube-dl --no-check-certificate"
+alias ydl="youtube-dl --no-check-certificate --ignore-errors"
 alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network ls"
 alias gff="git flow feature"
 alias gffs="git flow feature start"
@@ -65,4 +65,3 @@ bindkey -v
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi
-
