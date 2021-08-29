@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# set -x
+
+# All non-machine specific zsh stuff.
+# This also needs to work for Linux metal, VMs, containers, etc. that use zsh.
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -46,16 +51,8 @@ source "${ZSH}/oh-my-zsh.sh"
 export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 alias ydl="youtube-dl --no-check-certificate --ignore-errors"
-alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network "
-alias dkCla="docker container ls -a"
-alias gff="git flow feature"
-alias gffs="git flow feature start"
-alias gfff="git flow feature finish"
-alias gffd="git flow feature diff"
-alias gffco="git flow feature checkout"
-alias gffr="git flow feature rebase -i"
-alias gffp="git flow feature publish"
 
+# docker
 export DOCKER_BUILDKIT=1
 alias dksum="docker image ls -a; echo; docker container ls -a; echo; docker volume ls; echo; docker network ls"
 alias dkCl="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
@@ -68,7 +65,10 @@ fi
 # vi mode in line editor
 bindkey -v
 
-# LOCAL CUSTOMIZATION HERE: Python venv, repo, etc.
+# Put machine-specific customizations in a ".zshrc.<machine_name>" file
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi
+
+# Automatically start byobu
+_byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true

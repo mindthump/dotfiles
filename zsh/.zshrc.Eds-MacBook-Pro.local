@@ -1,14 +1,63 @@
-# FIX AS NEEDED
+# Specific to my personal MacBook. Might have some generic Mac stuff... but not generic zsh stuff.
 
 # For Macbook Pro @home
 hash -d mock=/Users/ed/repos/MockExample
 hash -d paf=/Users/ed/repos/python_app_framework
 
-export PATH="${PATH}:${HOME}/.cargo/bin"
+copy() {
+    if [[ $1 =~ ^-?[hH] ]]; then
 
-# pyenv as default python
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv activate venv
+        echo "Intelligently copies command results, text file, or raw text to"
+        echo "OS X clipboard"
+        echo
+        echo "Usage: copy [command or text]"
+        echo "  or pipe a command: [command] | copy"
+        return
+    fi
 
-_byobu_sourced=1 . /usr/local/Cellar/byobu/5.133/bin/byobu-launch 2>/dev/null || true
+    local output
+    local res=false
+    local tmpfile="${TMPDIR}/copy.$RANDOM.txt"
+    local msg=""
+
+    if [[ $# == 0 ]]; then
+        output=$(cat)
+        msg="Input copied to clipboard"
+        res=true
+    else
+        local cmd=""
+        for arg in $@; do
+            cmd+="\"$(echo -en $arg|sed -E 's/"/\\"/g')\" "
+        done
+        output=$(eval "$cmd" 2> /dev/null)
+        if [[ $? == 0 ]]; then
+            msg="Results of command are in the clipboard"
+            res=true
+        else
+            if [[ -f $1 ]]; then
+                output=""
+                for arg in $@; do
+                    if [[ -f $arg ]]; then
+                        type=`file "$arg"|grep -c text`
+                        if [ $type -gt 0 ]; then
+                            output+=$(cat $arg)
+                            msg+="Contents of $arg are in the clipboard.\n"
+                            res=true
+                        else
+                            msg+="File \"$arg\" is not plain text.\n"
+                        fi
+                    fi
+                done
+            else
+                output=$@
+                msg="Text copied to clipboard"
+                res=true
+            fi
+        fi
+    fi
+
+    $res && echo -ne "$output" | pbcopy -Prefer txt
+    echo -e "$msg"
+}
+
+source /Users/ed/venv39/bin/activate

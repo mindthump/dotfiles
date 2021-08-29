@@ -1,11 +1,12 @@
 # This is Git's per-user configuration file.
 
 [user]
-	name = Ed Cardinal
+	name = Edward Cardinal
 	email = edcgit@mindthump.com
 [core]
 	autocrlf = input
 	eol = lf
+	excludesfile = /Users/ed/.gitignore_global
 [credential]
 	helper = store
 [pull]
@@ -46,3 +47,5 @@
 	tool = kdiff3
 [merge]
 	tool = kdiff3
+[commit]
+	template = /Users/ed/.stCommitMsg
