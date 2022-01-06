@@ -18,7 +18,7 @@
 [difftool "p4merge"]
 	path = /mnt/c/Program Files/Perforce/p4merge.exe
 [difftool "meld"]
-	path=/usr/local/bin/meld
+	path = /Applications/Meld.app/Contents/MacOS/Meld
 [difftool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 
@@ -29,7 +29,7 @@
 [mergetool "p4merge"]
 	path = /mnt/c/Program Files/Perforce/p4merge.exe
 [mergetool "meld"]
-	path = /usr/local/bin/meld
+	path = /Applications/Meld.app/Contents/MacOS/Meld
 [mergetool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool "vim"]
@@ -43,6 +43,15 @@
 	trustExitCode = true
 
 [diff]
-	tool = kdiff3
+	tool = bc3
 [merge]
-	tool = kdiff3
+	tool = bc3
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+[mergetool "bc3"]
+	trustExitCode = true

@@ -39,6 +39,9 @@ antigen bundle history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle scd
 antigen bundle sudo
+antigen bundle aws
+antigen bundle oc
+antigen bundle kubectl
 antigen apply
 source "${ZSH}/oh-my-zsh.sh"
 
@@ -46,24 +49,66 @@ source "${ZSH}/oh-my-zsh.sh"
 export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 alias ydl="youtube-dl --no-check-certificate --ignore-errors"
-alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network "
-alias dkCla="docker container ls -a"
-alias gff="git flow feature"
-alias gffs="git flow feature start"
-alias gfff="git flow feature finish"
-alias gffd="git flow feature diff"
-alias gffco="git flow feature checkout"
-alias gffr="git flow feature rebase -i"
-alias gffp="git flow feature publish"
 
 export DOCKER_BUILDKIT=1
+alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network "
+alias dkCla="docker container ls -a"
 alias dksum="docker image ls -a; echo; docker container ls -a; echo; docker volume ls; echo; docker network ls"
 alias dkCl="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
 alias dlCla="docker container list -a"
 
+agc ()
+{
+    /usr/local/bin/ag --color $@ | less -S
+}
+alias now="date -u +%Y%m%d_%H%M%SZ"
+
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
 if [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]]; then
   source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+# nnn cd on quit -- use 'n' to start
+export NNN_BMS="h:~;r:~/repos"
+n ()
+{
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, either remove the "export" as in:
+    #    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    #    (or, to a custom path: NNN_TMPFILE=/tmp/.lastd)
+    # or, export NNN_TMPFILE after nnn invocation
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn -R "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
 
 # vi mode in line editor
 bindkey -v
@@ -72,3 +117,4 @@ bindkey -v
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi
+[[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'

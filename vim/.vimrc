@@ -2,6 +2,9 @@ set showcmd
 
 set encoding=utf-8
 
+" Stop the fucking beeping
+set vb t_vb=
+
 " For CircuitPython
 set noswapfile
 
@@ -16,8 +19,22 @@ let maplocalleader = "\\"
 nnoremap / /\v
 vnoremap / /\v
 
+set ignorecase
+set smartcase
+
+set tabstop=2       " Number of visual spaces per TAB
+set softtabstop=2   " Number of spaces in tab when editing
+set shiftwidth=2   " Used when indenting with >> and <<
+set shiftround      " Use multiple of shiftwidth when indenting with '<' and '>'
+set expandtab       " Tabs are spaces
+set smarttab        " Insert tabs on the start of a line according to shiftwidth, not tabstop
+set copyindent      " copy the previous indentation on autoindenting
+
 " Turn off search highlight
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :noh!<cr>
+
+" Toggle wrap
+nnoremap <leader>w :set wrap!<CR>
 
 " 'list' mode: start off, flip ",l", change visible markers 
 set nolist
