@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# set -x
+
+# All non-machine specific zsh stuff.
+# This also needs to work for Linux metal, VMs, containers, etc. that use zsh.
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -50,6 +55,7 @@ export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 alias ydl="youtube-dl --no-check-certificate --ignore-errors"
 
+# docker
 export DOCKER_BUILDKIT=1
 alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network "
 alias dkCla="docker container ls -a"
@@ -113,7 +119,7 @@ n ()
 # vi mode in line editor
 bindkey -v
 
-# LOCAL CUSTOMIZATION HERE: Python venv, repo, etc.
+# Put machine-specific customizations in a ".zshrc.<machine_name>" file
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi

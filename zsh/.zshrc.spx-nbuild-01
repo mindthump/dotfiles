@@ -1,6 +1,0 @@
-# FIX AS NEEDED
-
-# For nbuild @SPX
-export PATH=${PATH}:/usr/bin/snap:/snap/bin
-
-source ~/.venv/bin/activate > /dev/null 2>&1

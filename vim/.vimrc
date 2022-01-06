@@ -76,3 +76,7 @@ let g:NERDTreeShowHidden=1
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
 set modeline
+
+" Send to Marked2
+nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
+
