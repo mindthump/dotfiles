@@ -50,15 +50,14 @@ Plug 'junegunn/vim-easy-align'
 Plug 'powerline/powerline'
 Plug 'preservim/nerdtree'
 Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-" Plug 'svermeulen/vim-easyclip'
 Plug 'vim-airline/vim-airline'
 Plug 'whiteinge/diffconflicts'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'skanehira/docker-compose.vim'
+Plug 'pedrohdz/vim-yaml-folds'
 call plug#end()
 
 set number

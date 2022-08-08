@@ -47,13 +47,17 @@ antigen bundle sudo
 antigen bundle aws
 antigen bundle oc
 antigen bundle kubectl
+antigen bundle helm
+antigen bundle copypath
+antigen bundle minikube
+antigen bundle brew
+antigen bundle vi-mode
+antigen bundle tmux
 antigen apply
 source "${ZSH}/oh-my-zsh.sh"
 
 # ssh
 export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
-
-alias ydl="youtube-dl --no-check-certificate --ignore-errors"
 
 # docker
 export DOCKER_BUILDKIT=1
@@ -67,7 +71,11 @@ agc ()
 {
     /usr/local/bin/ag --color $@ | less -S
 }
+
+# miscellaneous aliases
+alias ydl="youtube-dl --no-check-certificate --ignore-errors"
 alias now="date -u +%Y%m%d_%H%M%SZ"
+alias -g B='| bat'
 
 lg()
 {
@@ -124,3 +132,5 @@ if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi
 [[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
+
+. /usr/local/opt/asdf/libexec/asdf.sh

@@ -1,0 +1,20 @@
+hash -d cdapi=/Users/ed.cardinal/repos/credit-decision-api
+hash -d pay=/Users/ed.cardinal/repos/payoff
+hash -d repos=/Users/ed.cardinal/repos
+hash -d jsl=/Users/ed.cardinal/repos/jenkins_shared_library
+hash -d dss=/Users/ed.cardinal/repos/document_signing_service
+
+alias lgcdapi='tmux new-window -n CDAPI lazygit -p ~/repos/credit-decision-api'
+alias lgpay='tmux new-window -n PAY lazygit -p ~/repos/payoff'
+alias lgre='tmux new-window -n RE lazygit -p ~/repos/releng-example'
+alias lgjsl='tmux new-window -n JSL lazygit -p ~/repos/jenkins_shared_library'
+alias lgua='tmux new-window -n U-A lazygit -p ~/repos/upstart_automation'
+alias lgiac='tmux new-window -n IAC lazygit -p ~/repos/infra-app-configs'
+alias lgiesj='tmux new-window -n IESJ lazygit -p ~/repos/infra-env-sync-jobs'
+alias lgtk='tmux new-window -n TK lazygit -p ~/repos/toolkit'
+alias lg3pp='tmux new-window -n 3PP lazygit -p ~/repos/third-party-proxy'
+alias lgdss='tmux new-window -n 3PP lazygit -p ~/repos/document_signing_service'
+
+alias podimages="oc get pods -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort -u"
+
+export PATH="$PATH:/Users/ed.cardinal/.local/bin"
