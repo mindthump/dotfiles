@@ -47,6 +47,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'powerline/powerline'
 Plug 'preservim/nerdtree'
 Plug 'tommcdo/vim-exchange'
@@ -58,6 +60,8 @@ Plug 'whiteinge/diffconflicts'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'skanehira/docker-compose.vim'
 Plug 'pedrohdz/vim-yaml-folds'
+Plug 'junegunn/vim-peekaboo'
+Plug 'airblade/vim-rooter'
 call plug#end()
 
 set number
@@ -79,3 +83,5 @@ set modeline
 " Send to Marked2
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
+" FZF
+set rtp+=/usr/local/opt/fzf

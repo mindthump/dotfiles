@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # set -x
 
 # All non-machine specific zsh stuff.
@@ -65,7 +63,9 @@ alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docke
 alias dkCla="docker container ls -a"
 alias dksum="docker image ls -a; echo; docker container ls -a; echo; docker volume ls; echo; docker network ls"
 alias dkCl="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
-alias dlCla="docker container list -a"
+alias dkCla="docker container list -a"
+
+alias lll="exa -l --icons --no-user --tree --level 2 --color always | less"
 
 agc ()
 {
@@ -127,6 +127,18 @@ n ()
 # vi mode in line editor
 bindkey -v
 
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
 # Put machine-specific customizations in a ".zshrc.<machine_name>" file
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
@@ -134,3 +146,14 @@ fi
 [[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
 
 . /usr/local/opt/asdf/libexec/asdf.sh
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+# Automatically start byobu
+_byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
+
+# Use the utility not alias
+unalias fd
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+FZF_DEFAULT_COMMAND='fd'
+FZF_DEFAULT_OPTIONS='--bind home:first,end:last'
