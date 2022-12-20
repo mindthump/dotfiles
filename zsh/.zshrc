@@ -15,7 +15,7 @@ setopt SHARE_HISTORY
 
 # User configuration
 
-export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 
 # Use vim for less, etc.
 export EDITOR=/usr/bin/vim
@@ -52,7 +52,6 @@ antigen bundle copypath
 antigen bundle minikube
 antigen bundle brew
 antigen bundle vi-mode
-antigen bundle tmux
 antigen apply
 source "${ZSH}/oh-my-zsh.sh"
 
@@ -134,3 +133,5 @@ fi
 [[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
 
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

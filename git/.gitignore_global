@@ -1,7 +1,6 @@
+.idea
 *~
 .DS_Store
-.idea
 .pytest_cache
 *.zip
-/src/pipeline.gdsl
-.idea/
+src/pipeline.gdsl

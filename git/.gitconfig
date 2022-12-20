@@ -6,7 +6,7 @@
 [core]
 	autocrlf = input
 	eol = lf
-	excludesfile = /Users/ed/.gitignore_global
+	excludesfile = /Users/ed.cardinal/.gitignore_global
 [credential]
 	helper = store
 [pull]
@@ -45,6 +45,7 @@
 
 [diff]
 	tool = bc3
+	submodule = log
 [merge]
 	tool = bc3
 [filter "lfs"]
@@ -56,3 +57,7 @@
 	defaultBranch = main
 [mergetool "bc3"]
 	trustExitCode = true
+[status]
+	submoduleSummary = true
+[alias]
+	bcreview = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t bc $BRANCH...$SHA; }; f"

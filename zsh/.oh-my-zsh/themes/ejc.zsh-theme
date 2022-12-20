@@ -2,7 +2,8 @@ function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
-PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg[cyan]%} ${PWD/#$HOME/~}%{$reset_color%} $(git_prompt_info)
+# PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg[cyan]%} ${PWD/#$HOME/~}%{$reset_color%} $(git_prompt_info)
+PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%W %T%{$reset_color%} in %{$fg[cyan]%} ${PWD/#$HOME/~}%{$reset_color%} $(git_prompt_info)
 $ '
 
 

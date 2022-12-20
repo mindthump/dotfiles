@@ -1,3 +1,7 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+set mouse=a
+
 set showcmd
 
 set encoding=utf-8

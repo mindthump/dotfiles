@@ -3,3 +3,5 @@ set -g prefix ^A
 set -g prefix2 F12
 bind a send-prefix
 bind C-a last-window
+
+bind s choose-tree
