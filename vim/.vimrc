@@ -63,6 +63,7 @@ Plug 'skanehira/docker-compose.vim'
 Plug 'pedrohdz/vim-yaml-folds'
 Plug 'junegunn/vim-peekaboo'
 Plug 'airblade/vim-rooter'
+Plug 'NoahTheDuke/vim-just'
 call plug#end()
 
 set number
