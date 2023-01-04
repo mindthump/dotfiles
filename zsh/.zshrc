@@ -126,12 +126,9 @@ n ()
 # vi mode in line editor
 bindkey -v
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Put machine-specific customizations in a ".zshrc.<machine_name>" file
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi
-[[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
-
-. /usr/local/opt/asdf/libexec/asdf.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
