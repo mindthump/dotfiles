@@ -138,21 +138,14 @@ lg()
     fi
 }
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+FZF_DEFAULT_COMMAND='fd'
+FZF_DEFAULT_OPTIONS='--bind home:first,end:last'
+
 # Put machine-specific customizations in a ".zshrc.<machine_name>" file
 if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
   source "${HOME}/.zshrc.$(uname -n)"
 fi
-[[ -e ~/.umt/umt-profile ]] && emulate sh -c 'source $HOME/.umt/umt-profile'
-
-. /usr/local/opt/asdf/libexec/asdf.sh
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # Automatically start byobu
 _byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
-
-# Use the utility not alias
-unalias fd
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-FZF_DEFAULT_COMMAND='fd'
-FZF_DEFAULT_OPTIONS='--bind home:first,end:last'

@@ -1,5 +1,7 @@
 [[ -e ~/.umt/umt-profile ]] && source ~/.umt/umt-profile
 . /usr/local/opt/asdf/libexec/asdf.sh
+. "$HOME/.cargo/env"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 
 hash -d cdapi=/Users/ed.cardinal/repos/credit-decision-api
