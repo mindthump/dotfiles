@@ -50,6 +50,10 @@ antigen bundle copypath
 antigen bundle minikube
 antigen bundle brew
 antigen bundle vi-mode
+antigen bundle ag
+antigen bundle fzf
+antigen bundle gnu-utils
+antigen bundle macos
 antigen apply
 source "${ZSH}/oh-my-zsh.sh"
 
