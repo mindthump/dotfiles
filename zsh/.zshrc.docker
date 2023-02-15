@@ -1,0 +1,4 @@
+# Specific to running in containers, like my toolbox.
+# These things need to happen in the final running shell.
+
+source venv/bin/activate

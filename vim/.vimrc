@@ -6,6 +6,9 @@ set smarttab
 " Stop the fucking beeping
 set vb t_vb=
 
+" Stop from starting with everything folded
+set nofoldenable
+
 " For CircuitPython
 set noswapfile
 

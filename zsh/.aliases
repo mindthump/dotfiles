@@ -14,6 +14,14 @@ alias lgtk='tmux new-window -n TK lazygit -p ~/repos/toolkit'
 alias lgpaf='tmux new-window -n PAF lazygit -p ~/repos/python_app_framework'
 alias lgdot='tmux new-window -n DOT lazygit -p ~/.dotfiles'
 
+alias mk='minikube'
+alias mkst='minikube start'
+alias mks='minikube status'
+alias mkstop='minikube stop'
+alias mkde='eval $(minikube -p minikube docker-env)'
+alias mkIb='minikube image build'
+alias mkIls='minikube image ls'
+
 agc ()
 {
     /usr/local/bin/ag --color $@ | less -S
