@@ -21,6 +21,7 @@ alias mkstop='minikube stop'
 alias mkde='eval $(minikube -p minikube docker-env)'
 alias mkIb='minikube image build'
 alias mkIls='minikube image ls'
+alias mkdash='minikube dashboard'
 
 agc ()
 {
