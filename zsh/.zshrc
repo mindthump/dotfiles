@@ -50,7 +50,6 @@ antigen bundle minikube
 antigen bundle brew
 antigen bundle vi-mode
 antigen bundle ag
-antigen bundle fzf
 antigen bundle gnu-utils
 antigen bundle macos
 antigen apply
@@ -79,10 +78,7 @@ fi
 
 # Use the utility not alias
 unalias fd
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-FZF_DEFAULT_COMMAND='fd'
-FZF_DEFAULT_OPTIONS='--bind home:first,end:last'
-
+#
 # vi mode in line editor
 bindkey -v
 

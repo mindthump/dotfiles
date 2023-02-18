@@ -50,8 +50,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'powerline/powerline'
 Plug 'preservim/nerdtree'
 Plug 'tomtom/tcomment_vim'
@@ -85,6 +83,3 @@ set modeline
 
 " Send to Marked2
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
-
-" FZF
-set rtp+=/usr/local/opt/fzf
