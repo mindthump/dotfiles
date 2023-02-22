@@ -91,5 +91,9 @@ if [ -f '/Users/ed/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ed/google-cl
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ed/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/completion.zsh.inc'; fi
 
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ed/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
 # Automatically start byobu
 _byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
