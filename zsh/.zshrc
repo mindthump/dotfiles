@@ -76,9 +76,6 @@ if [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]]; then
   source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
-# Use the utility not alias
-unalias fd
-#
 # vi mode in line editor
 bindkey -v
 
