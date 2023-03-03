@@ -13,6 +13,8 @@ alias -g B='| bat'
 alias lgtk='tmux new-window -n TK lazygit -p ~/repos/toolkit'
 alias lgpaf='tmux new-window -n PAF lazygit -p ~/repos/python_app_framework'
 alias lgdot='tmux new-window -n DOT lazygit -p ~/.dotfiles'
+alias lgkj='tmux new-window -n J-K lazygit -p ~/repos/kubernetes-jenkins'
+
 
 alias kr='kubectl run -i -t --rm --image'
 
