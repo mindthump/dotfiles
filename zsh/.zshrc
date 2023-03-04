@@ -63,6 +63,8 @@ export DOCKER_BUILDKIT=1
 
 # Put machine-specific customizations in a ".zshrc.<machine_name>" file
 [[ -f "${HOME}/.zshrc.$(uname -n)" ]] && source "${HOME}/.zshrc.$(uname -n)"
+# For special circumstances, like a particular kind of container
+[[ -f "${HOME}/.zshrc.extra" ]] && source "${HOME}/.zshrc.extra"
 
 [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
