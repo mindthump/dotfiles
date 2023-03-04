@@ -13,7 +13,7 @@ setopt SHARE_HISTORY
 
 # User configuration
 
-export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/ed/.rd/bin"
 
 # Use vim for less, etc.
 export EDITOR=/usr/bin/vim
@@ -62,33 +62,15 @@ export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 export DOCKER_BUILDKIT=1
 
 # Put machine-specific customizations in a ".zshrc.<machine_name>" file
-# First, am I in a container?
-if [ -f /.dockerenv ]; then
-  source "${HOME}/.zshrc.docker"
-else
-  if [[ -f "${HOME}/.zshrc.$(uname -n)" ]]; then
-    source "${HOME}/.zshrc.$(uname -n)"
-  fi
-fi
+[[ -f "${HOME}/.zshrc.$(uname -n)" ]] && source "${HOME}/.zshrc.$(uname -n)"
 
-
-if [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]]; then
-  source "${HOME}/.iterm2_shell_integration.zsh"
-fi
+[[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # vi mode in line editor
 bindkey -v
 
 # Alieses should go here for neatness
 source ~/.aliases
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ed/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ed/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/completion.zsh.inc'; fi
-
-export PATH="/Users/ed/.rd/bin:$PATH"
 
 # Automatically start byobu
 _byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
