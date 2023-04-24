@@ -4,6 +4,8 @@
 hash -d mock=/Users/ed/repos/MockExample
 hash -d paf=/Users/ed/repos/python_app_framework
 
+export PATH="${PATH}:${HOME}/.krew/bin"
+
 copy() {
     if [[ $1 =~ ^-?[hH] ]]; then
 

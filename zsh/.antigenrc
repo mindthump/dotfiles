@@ -1,0 +1,26 @@
+source "${HOME}/.antigen.zsh"
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle pip
+antigen bundle docker
+antigen bundle vagrant
+antigen bundle vagrant-prompt
+antigen bundle docker-compose
+antigen bundle akarzim/zsh-docker-aliases
+antigen bundle common-aliases
+antigen bundle command-not-found
+antigen bundle history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle scd
+antigen bundle sudo
+antigen bundle aws
+antigen bundle kubectl
+antigen bundle helm
+antigen bundle copypath
+antigen bundle minikube
+antigen bundle brew
+antigen bundle vi-mode
+antigen bundle ag
+antigen bundle gnu-utils
+antigen bundle macos
+antigen apply

@@ -66,6 +66,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'airblade/vim-rooter'
 Plug 'NoahTheDuke/vim-just' " justfiles
 Plug 'chrisbra/unicode.vim'
+Plug 'elzr/vim-json'
 call plug#end()
 
 " What is this? No idea...
