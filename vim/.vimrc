@@ -36,7 +36,7 @@ set copyindent      " copy the previous indentation on autoindenting
 
 " TOGGLES
 " Search highlight
-nnoremap <leader><space> :noh!<cr>
+nnoremap <leader><space> :noh<cr>
 " Wrap
 nnoremap <leader>w :set wrap!<CR>
 " List

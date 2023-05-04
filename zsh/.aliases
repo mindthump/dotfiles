@@ -152,3 +152,4 @@ alias dkY='docker system'
 alias dkYdf='docker system df'
 alias dkYpr='docker system prune'
 
+alias h=history

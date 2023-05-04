@@ -3,8 +3,9 @@
 # For Macbook Pro @home
 hash -d mock=/Users/ed/repos/MockExample
 hash -d paf=/Users/ed/repos/python_app_framework
+hash -d morty=/Volumes/morty\'s\ home
 
-export PATH="${PATH}:${HOME}/.krew/bin"
+export PATH="${PATH}:${HOME}/.rd/bin:/usr/local/opt/ruby/bin
 
 copy() {
     if [[ $1 =~ ^-?[hH] ]]; then
