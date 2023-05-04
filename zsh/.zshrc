@@ -3,9 +3,6 @@
 # All non-machine specific zsh stuff.
 # This also needs to work for Linux metal, VMs, containers, etc. that use zsh.
 
-# vi mode in line editor
-bindkey -v
-
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -35,13 +32,7 @@ typeset -ga sources
 sources+="${HOME}/.dotfiles/zsh/.antigenrc"
 sources+="${HOME}/.dotfiles/zsh/.aliases"
 sources+="${HOME}/.oh-my-zsh/oh-my-zsh.sh"
-echo $sources
-foreach file (`echo $sources`)
-  echo "Sourcing ${file}"
-  if [[ -a $file ]]; then
-    source $file
-  fi
-end
+echo "Sourcing: ${sources}"
 
 # ssh
 export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
@@ -62,6 +53,9 @@ autoload -U compinit; compinit
 # PATH and shell completion for the Google Cloud SDK.
 if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/completion.zsh.inc'; fi
+
+# vi mode in line editor
+bindkey -v
 
 # Automatically start byobu
 _byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
