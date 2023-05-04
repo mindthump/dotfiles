@@ -2,7 +2,6 @@
 
 # All non-machine specific zsh stuff.
 # This also needs to work for Linux metal, VMs, containers, etc. that use zsh.
-
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -32,6 +31,7 @@ typeset -ga sources
 sources+="${HOME}/.dotfiles/zsh/.antigenrc"
 sources+="${HOME}/.dotfiles/zsh/.aliases"
 sources+="${HOME}/.oh-my-zsh/oh-my-zsh.sh"
+echo "Sourcing: ${sources}"
 foreach file (`echo $sources`)
   if [[ -a $file ]]; then
     source $file
