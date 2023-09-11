@@ -7,7 +7,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_THEME="ejc"
 plugins=(aliases git pip vagrant vagrant-prompt common-aliases httpie
   command-not-found history-substring-search scd sudo aws kubectl
-  copypath minikube brew vi-mode ag gnu-utils zsh-docker-aliases)
+  copypath minikube brew vi-mode ag gnu-utils)
 source "${ZSH}/oh-my-zsh.sh"
 
 HISTFILE="${HOME}/.zsh_history"
