@@ -23,4 +23,6 @@ antigen bundle vi-mode
 antigen bundle ag
 antigen bundle gnu-utils
 antigen bundle macos
+antigen bundle kubectl
+antigen bundle kubectx
 antigen apply
