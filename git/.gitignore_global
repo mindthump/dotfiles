@@ -4,3 +4,4 @@
 .pytest_cache
 *.zip
 src/pipeline.gdsl
+.vagrant
