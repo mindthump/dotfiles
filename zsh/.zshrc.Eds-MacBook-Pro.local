@@ -9,6 +9,12 @@ hash -d tk=/Users/ed/repos/toolkit
 
 export PATH="${PATH}:${HOME}/.rd/bin:/usr/local/opt/ruby/bin:${HOME}/.krew/bin"
 
+source /Users/ed/.config/broot/launcher/bash/br
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# brew install zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 copy() {
     if [[ $1 =~ ^-?[hH] ]]; then
 

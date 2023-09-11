@@ -52,11 +52,3 @@ bindkey -v
 
 # Automatically start byobu
 _byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
-
-source /Users/ed/.config/broot/launcher/bash/br
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# brew install zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# eval "$(starship init zsh)"
