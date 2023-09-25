@@ -12,7 +12,7 @@ hash -d ckac=/Users/ed/repos/udemy-cka-course
 export PATH="${PATH}:${HOME}/.rd/bin:/usr/local/opt/ruby/bin:${HOME}/.krew/bin"
 
 # K8s aliases
-source "${HOME}/.dotfiles/zsh/.aliases-k8s"
+source "${HOME}/.dotfiles/zsh/.aliases.k8s"
 
 source /Users/ed/.config/broot/launcher/bash/br
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
