@@ -1,0 +1,30 @@
+# DOCKER
+alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network "
+alias dkCla="docker container ls -a"
+alias dksum="docker image ls -a; echo; docker container ls -a; echo; docker volume ls; echo; docker network ls"
+alias dkClf="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
+alias podimages="kubctl get pods -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort -u"
+
+# KUBERNETES
+alias k=kubectl
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+alias kr='kubectl run -i -t --rm --image'
+kns ()
+{
+  kubectl config view --minify -o jsonpath='{..namespace}{"\n"}'
+}
+alias kgpaw='kubectl get pods -A -o wide | bat -S'
+alias kgaaw='kubectl get --all-namespaces --output wide all,pv,pvc,sc,cm,nodes | bat -S'
+alias kgaaj='kubectl get --all-namespaces --output json all,pv,pvc,sc,cm,nodes'
+alias kgaay='kubectl get --all-namespaces --output yaml all,pv,pvc,sc,cm,nodes'
+
+# MINIKUBE
+alias mk='minikube'
+alias mkst='minikube start'
+alias mks='minikube status'
+alias mkstop='minikube stop'
+alias mkde='eval $(minikube -p minikube docker-env)'
+alias mkIb='minikube image build'
+alias mkIls='minikube image ls'
+alias mkdash='minikube dashboard'
+
