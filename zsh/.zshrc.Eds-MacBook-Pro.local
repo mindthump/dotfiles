@@ -6,7 +6,6 @@ hash -d paf=/Users/ed/repos/python_app_framework
 hash -d morty=/Volumes/morty\'s\ home
 hash -d vkk=/Users/ed/repos/vagrant-kubeadm-kubernetes
 hash -d tk=/Users/ed/repos/toolkit
-hash -d khw=/Users/ed/repos/kubernetes-the-hard-way
 hash -d ckac=/Users/ed/repos/udemy-cka-course
 
 export PATH="${PATH}:${HOME}/.rd/bin:/usr/local/opt/ruby/bin:${HOME}/.krew/bin"
