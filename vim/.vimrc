@@ -67,6 +67,7 @@ Plug 'airblade/vim-rooter'
 Plug 'NoahTheDuke/vim-just' " justfiles
 Plug 'chrisbra/unicode.vim'
 Plug 'elzr/vim-json'
+Plug 'wellle/targets.vim'
 call plug#end()
 
 " What is this? No idea...

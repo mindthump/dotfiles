@@ -1,9 +1,102 @@
-# DOCKER
+# My own Docker / Kubernetes aliases
+#
+# DOCKER (from https://github.com/akarzim/zsh-docker-aliases/blob/master/alias.zsh)
+alias dk='docker'
+alias dka='docker attach'
+alias dkb='docker build'
+alias dkd='docker diff'
+alias dkdf='docker system df'
+alias dke='docker exec'
+alias dkE='docker exec -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t'
+alias dkh='docker history'
+alias dki='docker images'
+alias dkin='docker inspect'
+alias dkim='docker import'
+alias dkk='docker kill'
+alias dkkh='docker kill -s HUP'
+alias dkl='docker logs'
+alias dkL='docker logs -f'
+alias dkli='docker login'
+alias dklo='docker logout'
+alias dkls='docker ps'
+alias dkp='docker pause'
+alias dkP='docker unpause'
+alias dkpl='docker pull'
+alias dkph='docker push'
+alias dkps='docker ps'
+alias dkpsa='docker ps -a'
+alias dkr='docker run'
+alias dkR='docker run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm'
+alias dkRe='docker run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm --entrypoint /bin/bash'
+alias dkRM='docker system prune'
+alias dkrm='docker rm'
+alias dkrmi='docker rmi'
+alias dkrn='docker rename'
+alias dks='docker start'
+alias dkS='docker restart'
+alias dkss='docker stats'
+alias dksv='docker save'
+alias dkt='docker tag'
+alias dktop='docker top'
+alias dkup='docker update'
+alias dkV='docker volume'
+alias dkv='docker version'
+alias dkw='docker wait'
+alias dkx='docker stop'
+
+## Container (C)
+alias dkC='docker container'
+alias dkCa='docker container attach'
+alias dkCcp='docker container cp'
+alias dkCd='docker container diff'
+alias dkCe='docker container exec'
+alias dkCE='docker container exec -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t'
+alias dkCin='docker container inspect'
+alias dkCk='docker container kill'
+alias dkCl='docker container logs'
+alias dkCL='docker container logs -f'
+alias dkCls='docker container ls'
+alias dkCp='docker container pause'
+alias dkCpr='docker container prune'
+alias dkCrn='docker container rename'
+alias dkCS='docker container restart'
+alias dkCrm='docker container rm'
+alias dkCr='docker container run'
+alias dkCR='docker container run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm'
+alias dkCRe='docker container run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm --entrypoint /bin/bash'
+alias dkCs='docker container start'
+alias dkCss='docker container stats'
+alias dkCx='docker container stop'
+alias dkCtop='docker container top'
+alias dkCP='docker container unpause'
+alias dkCup='docker container update'
+alias dkCw='docker container wait'
+
+## Image (I)
+alias dkI='docker image'
+alias dkIb='docker image build'
+alias dkIh='docker image history'
+alias dkIim='docker image import'
+alias dkIin='docker image inspect'
+alias dkIls='docker image ls'
+alias dkIpr='docker image prune'
+alias dkIpl='docker image pull'
+alias dkIph='docker image push'
+alias dkIrm='docker image rm'
+alias dkIsv='docker image save'
+alias dkIt='docker image tag'
+
+## System (Y)
+alias dkY='docker system'
+alias dkYdf='docker system df'
+alias dkYpr='docker system prune'
+
+# My custom aliases
 alias dksum="docker image ls -a; docker container ls -a; docker volume ls; docker network "
 alias dkCla="docker container ls -a"
 alias dksum="docker image ls -a; echo; docker container ls -a; echo; docker volume ls; echo; docker network ls"
 alias dkClf="docker container list --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Status}}'"
-alias podimages="kubctl get pods -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort -u"
+
 
 # KUBERNETES
 alias k=kubectl
@@ -17,6 +110,7 @@ alias kgpaw='kubectl get pods -A -o wide | bat -S'
 alias kgaaw='kubectl get --all-namespaces --output wide all,pv,pvc,sc,cm,nodes | bat -S'
 alias kgaaj='kubectl get --all-namespaces --output json all,pv,pvc,sc,cm,nodes'
 alias kgaay='kubectl get --all-namespaces --output yaml all,pv,pvc,sc,cm,nodes'
+alias kpi="kubectl get pods -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort -u"
 
 # MINIKUBE
 alias mk='minikube'
@@ -27,4 +121,3 @@ alias mkde='eval $(minikube -p minikube docker-env)'
 alias mkIb='minikube image build'
 alias mkIls='minikube image ls'
 alias mkdash='minikube dashboard'
-

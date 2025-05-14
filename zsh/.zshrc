@@ -7,7 +7,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_THEME="ejc"
 plugins=(aliases git pip vagrant vagrant-prompt common-aliases httpie
   command-not-found history-substring-search scd sudo aws kubectl
-  copypath minikube brew vi-mode ag gnu-utils)
+  copypath minikube brew vi-mode gnu-utils)
 source "${ZSH}/oh-my-zsh.sh"
 
 HISTFILE="${HOME}/.zsh_history"
@@ -19,7 +19,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users
 export EDITOR=/usr/local/bin/nvim
 
 # Chop lines and raw (for color)
-# export LESS="-S -r"
+ export LESS="-S"
 
 # Execution time stamp shown in the history command output.
 export HIST_STAMPS="mm/dd/yyyy"
@@ -44,11 +44,14 @@ source "${HOME}/.dotfiles/zsh/.aliases"
 [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # PATH and shell completion for the Google Cloud SDK.
-# if [ -f '${HOME}/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/path.zsh.inc'; fi
-# if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ed/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/usr/local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/completion.zsh.inc'; fi
 
 # vi mode in line editor
 bindkey -v
+bindkey -M vicmd v edit-command-line
 
 # Automatically start byobu
 _byobu_sourced=1 . /usr/local/bin/byobu-launch 2>/dev/null || true
+
+. "$HOME/.local/bin/env"

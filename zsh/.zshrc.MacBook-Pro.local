@@ -75,4 +75,4 @@ copy() {
     echo -e "$msg"
 }
 
-source /Users/ed/venv39/bin/activate
+source /Users/ed/venv313/bin/activate
